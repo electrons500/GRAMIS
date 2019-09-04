@@ -1,0 +1,179 @@
+﻿@model GRAMIS.Models.ViewModel.MemberViewModel
+
+@{
+    ViewData["Title"] = "MemberDetails";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+    <div>
+       
+        <table style="width:70%;">
+            <tr>
+                <td rowspan="4" style="width:100px"><img src="~/img/GNATOC.jpg" alt="logo" style="width:120px;" /></td>
+                <td>&nbsp;&nbsp;</td>
+                <td colspan="8"><h5>Ghana National Association Of Teachers On Campus(Knust)</h5></td>
+
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td colspan="2"><p>Private Mail Bag</p></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td><p>University Post Office</p></td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>Knust - Kumasi</td></tr>
+            
+        </table>
+        
+    </div>
+   
+    <div>
+        <hr />
+        <div>
+            <h3>Member Information</h3>
+        </div>
+        <br />
+        @if (Model.Picture == null)
+        {
+            <img height="150" width="150" class="img-thumbnail" src="~/img/memberlogo.jpg" alt="member Pic" />
+        }
+        else
+        {
+            <img height="150" width="150" class="img-thumbnail" src="data:image/jpg;base64,@(Html.Raw(Convert.ToBase64String(Model.Picture)))" alt="member Pic" /><br />
+        }
+       <br />
+       <div class="container">
+           <dl class="row">
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.Firstname)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.Firstname)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.Othername)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.Othername)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.Surname)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.Surname)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.BirthDate)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.BirthDate)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.GenderId)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.GenderName)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.Hometown)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.Hometown)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.Address)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.Address)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.RegionId)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.RegionName)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.PhoneNumber)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.PhoneNumber)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.MaritalId)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.MaritalName)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.CurrentSchool)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.CurrentSchool)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.AcademicYearId)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.AcademicYearName)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.Course)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.Course)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.LevelId)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.LevelName)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.AcademicQ)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.AcademicQ)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.ProfQ)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.ProfQ)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.Staffid)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.Staffid)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.RankId)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.RankName)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.Regno)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.Regno)
+               </dd>
+               <dt class="col-md-2">
+                   @Html.DisplayNameFor(model => model.Ssfno)
+               </dt>
+               <dd class="col-md-10">
+                   @Html.DisplayFor(model => model.Ssfno)
+               </dd>
+           </dl>
+       </div>
+    </div>
+<nav class="navbar navbar-expand-sm navbar-light" >
+    <div>
+        <a asp-action="EditMember" asp-route-id="@Model.Id" class="btn btn-success"><span class="fa fa-edit"> Edit Member Details</span></a> &nbsp; &nbsp;
+        <a href="javascript:window.print()" class="btn btn-primary"><span class="fa fa-print"> Print</span></a>
+    </div>
+</nav>
+<br />
+<nav class="navbar navbar-expand">
+    <div><a asp-action="Index">Back to List</a></div>
+</nav>

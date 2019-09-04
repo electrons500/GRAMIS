@@ -1,0 +1,149 @@
+﻿@model GRAMIS.Models.ViewModel.MemberViewModel
+
+@{
+    ViewData["Title"] = "AddMember";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Member</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddMember" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Memberphoto" class="control-label"></label>
+                <input type="file" asp-for="Memberphoto" class="form-control" accept="image/*"/>
+                <span asp-validation-for="Memberphoto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Firstname" class="control-label"></label>
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Othername" class="control-label"></label>
+                <input asp-for="Othername" class="form-control" />
+                <span asp-validation-for="Othername" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GenderId" class="control-label"></label>
+                <select asp-for="GenderId" asp-items="Model?.GenderList" class="form-control">
+                    <option>----Select Gender ----</option>
+                </select>
+                <span asp-validation-for="GenderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hometown" class="control-label"></label>
+                <input asp-for="Hometown" class="form-control" />
+                <span asp-validation-for="Hometown" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegionId" class="control-label"></label>
+                <select asp-for="RegionId" asp-items="Model?.RegionList" class="form-control">
+                    <option>----Select Region ----</option>
+                </select>
+                <span asp-validation-for="RegionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaritalId" class="control-label"></label>
+
+                <select asp-for="MaritalId" asp-items="Model?.MaritalList" class="form-control">
+                    <option>----Select Marital Status ----</option>
+                </select>
+                <span asp-validation-for="MaritalId" class="text-danger"></span>
+            </div>          
+            <div class="form-group">
+                <label asp-for="AcademicYearId" class="control-label"></label>
+                <select asp-for="AcademicYearId" asp-items="Model?.AcademicyearList" class="form-control">
+                    <option>----Select Academic Year ----</option>
+                </select>
+                <span asp-validation-for="AcademicYearId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course" class="control-label"></label>
+                <input asp-for="Course" class="form-control" />
+                <span asp-validation-for="Course" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LevelId" class="control-label"></label>
+                <select asp-for="LevelId" asp-items="Model?.LevelList" class="form-control">
+                    <option>----Select your Level ----</option>
+                </select>
+                <span asp-validation-for="LevelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcademicQ" class="control-label"></label>
+                <input asp-for="AcademicQ" class="form-control" />
+                <span asp-validation-for="AcademicQ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfQ" class="control-label"></label>
+                <input asp-for="ProfQ" class="form-control" />
+                <span asp-validation-for="ProfQ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Staffid" class="control-label"></label>
+                <input asp-for="Staffid" class="form-control" />
+                <span asp-validation-for="Staffid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RankId" class="control-label"></label>
+                <select asp-for="RankId" asp-items="Model?.RankList" class="form-control">
+                    <option>----Select your rank ----</option>
+                </select>
+                <span asp-validation-for="RankId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Regno" class="control-label"></label>
+                <input asp-for="Regno" class="form-control" />
+                <span asp-validation-for="Regno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ssfno" class="control-label"></label>
+                <input asp-for="Ssfno" class="form-control" />
+                <span asp-validation-for="Ssfno" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                @*<input type="submit" value="Submit" class="btn btn-primary" />*@
+                <button type="submit" class="btn btn-primary"><span class="fa fa-paper-plane"> Submit</span></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

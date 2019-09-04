@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-GRAMIS-2E6D7BF2-8832-4E54-B152-97C441951226</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Views\Home\img\" />
+    <Folder Include="Views\Home\js\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\img\1.jpg" />
+    <None Include="wwwroot\img\2.jpg" />
+    <None Include="wwwroot\img\apple-touch-icon.png" />
+    <None Include="wwwroot\img\favicon.png" />
+    <None Include="wwwroot\img\gnatoclogo.png" />
+    <None Include="wwwroot\img\hero-bg.jpg" />
+    <None Include="wwwroot\img\logoicon.png" />
+  </ItemGroup>
+
+</Project>

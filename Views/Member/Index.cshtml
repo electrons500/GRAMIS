@@ -1,0 +1,105 @@
+﻿@model IEnumerable<GRAMIS.Models.ViewModel.MemberViewModel>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+
+<h2>View all Members</h2><br />
+@*Id :@ViewData["txtsearch"]*@
+<p>
+    <a asp-action="AddMember" class="btn btn-primary btn-sm" style="background-color:#0069D9"><span class="fa fa-plus-circle"> Add New Member</span></a>
+</p>
+<br />
+<form class="form-inline" asp-action="Index" method="get">
+
+    <div class="form-group mx-sm-2 mb-2">
+        <input type="text" class="form-control" name="searchstring" value="@ViewData["txtsearch"]" style="width:400px;" placeholder="Search by Name" />
+    </div>
+    <button type="submit" class="btn btn-primary mb-2" style="background-color:#0069D9"><span class="fa fa-search"> Search</span></button>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <p>Select Number rows</p>
+    &nbsp;
+    <!--		Show Numbers Of Rows 		-->
+    <select class="form-control mb-2" name="state" id="maxRows">
+        <option value="5000">Show ALL Rows</option>
+        <option value="2">2</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="70">70</option>
+        <option value="100">100</option>
+    </select>
+</form>
+
+<br />
+<table id="table-id" class="table table-hover table-striped table-sm table-responsive-sm" >
+    <thead class="thead thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fullname)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LevelId)
+            </th>
+
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fullname)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LevelName)
+                </td>
+
+
+                <td>
+                    <a asp-action="EditMember" asp-route-id="@item.Id" class="btn btn-warning btn-sm text-white" style="background-color:#E0A800"><span class="fa fa-edit"> Edit</span></a>
+                    <a asp-action="MemberDetails" asp-route-id="@item.Id" class="btn btn-success btn-sm"  style="background-color:#218838"><span class="fa fa-eye"> Details</span></a>
+                    <a asp-action="RemoveMember" asp-route-id="@item.Id" class="btn btn-danger btn-sm"style="background-color:#C82333"><span class="fa fa-trash"> Delete</span></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div class="pagination-sm">
+    <nav>
+        <ul class="pagination">
+            <!--	Here the JS Function Will Add the Rows -->
+        </ul>
+    </nav>
+</div>
+
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery-3.2.1.min.js"></script>
+<script src="~/js/js.js"></script>
+<script type="text/javascript">
+    getPagination('#table-id');
+                    //getPagination('.table-class');
+                    //getPagination('table');
+</script>

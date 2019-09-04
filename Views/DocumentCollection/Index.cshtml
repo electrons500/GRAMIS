@@ -1,0 +1,48 @@
+﻿@model IEnumerable<GRAMIS.Models.ViewModel.DocumentCollectionViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View uploaded Documents</h2><br />
+
+<p>
+    <a asp-action="AddDocument" asp-route-id="@ViewBag.id" class="btn btn-primary"><span class="fa fa-plus-circle"> Add New Document</span></a>
+</p>
+<table class="table table-hover table-sm table-responsive-sm">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentCategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileName)
+            </th>
+           
+            
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentCategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+           
+            
+            <td>
+               
+                <a asp-action="Download" asp-route-id="@item.Id" class="btn btn-success btn-sm"><span class="fa fa-cloud-download"> Download</span></a> 
+                <a asp-action="DeleteDocument" asp-route-id="@item.Id" class="btn btn-danger btn-sm"><span class="fa fa-trash"> Delete</span></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

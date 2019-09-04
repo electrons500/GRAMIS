@@ -1,0 +1,35 @@
+﻿@model IEnumerable<GRAMIS.Models.ViewModel.RoleViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View user roles</h2>
+<br />
+
+<p> <a asp-action="Addrole" class="btn btn-primary btn-sm"><span class="fa fa-plus-circle">  Add new user role</span></a></p>
+<table class="table table-hover table-sm">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoleName)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @*<a asp-action="Edit" asp-route-id="@item.RoleId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RoleId">Details</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.RoleId" class="btn btn-danger btn-sm"><span class="fa fa-trash"> Delete</span></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
